@@ -4,8 +4,10 @@
 #include<cmath>
 using namespace std;
 
+//calculate the score of current game table
 double calculation(){
     double score;
-    //calculate the score of current game table
+    //test
+    
     return score;
 }
