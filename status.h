@@ -3,6 +3,6 @@
 #ifndef STATUS_H
 #define STATUS_H
 
-bool checkstatus();
+bool check_alive(const vector<vector<int>>&v, const int size);
 
 #endif
