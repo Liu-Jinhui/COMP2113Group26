@@ -1,6 +1,7 @@
 //move.cpp
 
 #include<iostream>
+#include<vector>
 #include "move.h"
 using namespace std;
 

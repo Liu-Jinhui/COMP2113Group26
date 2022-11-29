@@ -9,6 +9,7 @@
 #include "menu.h"
 #include "move.h"
 #include "print.h"
+#include "status.h"
 using namespace std;
 
 struct position{

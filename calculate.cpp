@@ -2,6 +2,7 @@
 
 #include<iostream>
 #include<cmath>
+#include<vector>
 #include "calculate.h"
 using namespace std;
 

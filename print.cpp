@@ -1,6 +1,9 @@
 //print.cpp
 
 #include<iostream>
+#include<vector>
+#include<iomanip>
+#include "calculate.h"
 using namespace std;
 
 void print(const vector<vector<int>>& v, const int size){

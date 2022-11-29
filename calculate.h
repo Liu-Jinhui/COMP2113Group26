@@ -3,6 +3,7 @@
 #ifndef CALCULATE_H
 #define CALCULATE_H
 
-double calculate();
+double transfer(int n);
+double calculation(const vector<vector<int>>& v, const int size);
 
 #endif
