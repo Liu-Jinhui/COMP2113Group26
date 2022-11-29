@@ -2,6 +2,7 @@
 
 #include<iostream>
 #include<vector>
+#include "status.h"
 using namespace std;
 
 bool check_alive(const vector<vector<int>>&v, const int size){
