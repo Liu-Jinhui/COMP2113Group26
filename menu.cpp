@@ -1,7 +1,8 @@
 //menu.cpp
 
 #include <iostream>
-#include<string>
+#include <string>
+#include "menu.h"
 using namespace std;
 
 void welcome() {
