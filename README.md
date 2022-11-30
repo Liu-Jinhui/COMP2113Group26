@@ -23,6 +23,7 @@ A scoreboard on the upper-right keeps track of the user’s CGPA (under the calc
 ## Non-standard C/C++ libraries
 
 ## Compilation and execution instructions
+
 1. In ubuntu or terminal, input
 
 ```bash

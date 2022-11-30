@@ -59,6 +59,7 @@ void print_history(string file_name){
         }
         cout << str << endl;
     }
+    cout << endl;
 }
 
 void save_best(string file_name, vector<vector<int>>& v, int size){
