@@ -166,21 +166,45 @@ int main(){
     string opt;
     while(cin >> opt){
         if(opt == "1"){
+            if(check_alive(game_table, table_size) == 34){
+                string file_name = name + ".txt";
+                save_best(file_name, game_table, table_size);
+                cout << "Game Over" << endl;
+                break; 
+            }
             up(game_table, table_size);
             update_available_positions(game_table, available_pos, table_size);
             generate_new_vertex(game_table, available_pos, table_size);
         }
         else if(opt == "2"){
+            if(check_alive(game_table, table_size) == 34){
+                string file_name = name + ".txt";
+                save_best(file_name, game_table, table_size);
+                cout << "Game Over" << endl;
+                break; 
+            }
             down(game_table, table_size);
             update_available_positions(game_table, available_pos, table_size);
             generate_new_vertex(game_table, available_pos, table_size);
         }
         else if(opt == "3"){
+            if(check_alive(game_table, table_size) == 12){
+                string file_name = name + ".txt";
+                save_best(file_name, game_table, table_size);
+                cout << "Game Over" << endl;
+                break; 
+            }
             left(game_table, table_size);
             update_available_positions(game_table, available_pos, table_size);
             generate_new_vertex(game_table, available_pos, table_size);
         }
         else if(opt == "4"){
+            if(check_alive(game_table, table_size) == 12){
+                string file_name = name + ".txt";
+                save_best(file_name, game_table, table_size);
+                cout << "Game Over" << endl;
+                break; 
+            }
             right(game_table, table_size);
             update_available_positions(game_table, available_pos, table_size);
             generate_new_vertex(game_table, available_pos, table_size);
