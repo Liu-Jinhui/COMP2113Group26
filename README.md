@@ -30,6 +30,7 @@ make main
 ```
 
 to compile the codes.
+
 2. Then, input 
 
 ```bash
@@ -37,8 +38,11 @@ to compile the codes.
 ```
 
 to execute the program.
+
 3. Enjoy the game.
+
 4. In our game, if you don't want to play the game at this moment, press Exit to quit the game, and your grid will be stored. 
+
 5. To reload the game, input
 
 ```bash
