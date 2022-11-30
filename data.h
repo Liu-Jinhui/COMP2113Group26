@@ -8,5 +8,6 @@ using namespace std;
 void del(string file_name);
 void insert(string file_name, vector<vector<int>>& v, int size);
 void print_history(string file_name);
+void save_best(string file_name, vector<vector<int>>& v, int size);
 
 #endif
