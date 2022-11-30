@@ -35,7 +35,7 @@ void insert(string file_name, vector<vector<int>>& v, int size){
     time_t rawtime;
     time (&rawtime);
     fout << "Time: " <<  ctime (&rawtime);
-    fout << "Best score: " << calculation(v, size) << endl;
+    fout << "Best GPA: " << calculation(v, size) << endl;
     for(int i = 0; i < size; i++){
         for(int j = 0; j < size; j++){
             fout << v[i][j] << " ";
@@ -68,7 +68,7 @@ void save_best(string file_name, vector<vector<int>>& v, int size){
     time_t rawtime;
     time (&rawtime);
     fout << "Time: " <<  ctime (&rawtime);
-    fout << "Best score: " << calculation(v, size) << endl;
+    fout << "Best GPA: " << calculation(v, size) << endl;
     fout.close();
 }
 

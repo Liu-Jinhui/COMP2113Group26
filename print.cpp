@@ -64,6 +64,6 @@ void print(const vector<vector<int>>& v, const int size){
 //    if ( bestscore < currentscore ){
 //        bestscore = currentscore;
 //    }
-    cout << "Your Current Score = " << currentscore << endl << endl;
+    cout << "Your Current GPA = " << currentscore << endl << endl;
 //    cout << "Your Best Score = " << bestscore << endl;
 }
