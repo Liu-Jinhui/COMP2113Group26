@@ -8,7 +8,7 @@ This is a single player sliding tile puzzle video game.User can play on a plain 
 
 Every time, the user can select the direction of the sliding of tiles. If the user enters 1, all tiles will move up; If the user enters 2, all tiles will move down; If the user enters 3, all tiles will move left; If the user enters 4, all tiles will move right; if you enters “exit”, the game will end. Tiles slide as far as possible in the chosen direction until they are stopped by either another tile or the edge of the grid. If two tiles of the same number collide while moving, they will merge into a tile which is a high level of grade (i.e., D becomes D+). 
 
-A scoreboard on the upper-right keeps track of the user’s CGPA (under the calculation method of HKU). The user's score (CGPA) starts at zero, and is increased whenever two tiles combine, by the GPA of the new tile. 
+A scoreboard on the upper-right keeps track of the user's current GPA and best GPA (under the calculation method of HKU). The user's GPA starts at zero, and will be re-calculated whenever the tiles move. 
 
 ## Features to implement
 
