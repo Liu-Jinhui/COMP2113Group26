@@ -10,7 +10,7 @@ struct position{
     int x, y;
 };
 
-void generate_new_vertex(vector<vector<int>>& v, list<position>& pos, const int size);
+void generate_new_vertex(vector<vector<int>>& v, list<position>& pos, const int size, double &bestscore);
 void update_available_positions(vector<vector<int>>& v, list<position>& pos, const int size);
 
 #endif 

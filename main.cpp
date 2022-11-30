@@ -17,9 +17,9 @@
 #include "init.h"
 using namespace std;
 
-int best_score = 0;
-
 int table_size;
+
+double bestscore = 0.00;
 
 void work_menu(string opt, vector<vector<int>>& v, string name){
     while (true){
@@ -113,7 +113,7 @@ int main(){
             }
             fin.close();
             if(flag){
-                print(game_table, table_size);
+                print(game_table, table_size, bestscore);
             }
             else{
                 cout << "No previous game to continue. Please start a new game.\n";
@@ -161,7 +161,7 @@ int main(){
         }
     }
 
-    generate_new_vertex(game_table, available_pos, table_size);
+    generate_new_vertex(game_table, available_pos, table_size, bestscore);
     cout << "1|up  2|down  3|left  4|right  exit|end game  M|show menu" << endl;
     string opt;
     while(cin >> opt){
@@ -174,7 +174,7 @@ int main(){
             }
             up(game_table, table_size);
             update_available_positions(game_table, available_pos, table_size);
-            generate_new_vertex(game_table, available_pos, table_size);
+            generate_new_vertex(game_table, available_pos, table_size, bestscore);
         }
         else if(opt == "2"){
             if(check_alive(game_table, table_size) == 34){
@@ -185,7 +185,7 @@ int main(){
             }
             down(game_table, table_size);
             update_available_positions(game_table, available_pos, table_size);
-            generate_new_vertex(game_table, available_pos, table_size);
+            generate_new_vertex(game_table, available_pos, table_size, bestscore);
         }
         else if(opt == "3"){
             if(check_alive(game_table, table_size) == 12){
@@ -196,7 +196,7 @@ int main(){
             }
             left(game_table, table_size);
             update_available_positions(game_table, available_pos, table_size);
-            generate_new_vertex(game_table, available_pos, table_size);
+            generate_new_vertex(game_table, available_pos, table_size, bestscore);
         }
         else if(opt == "4"){
             if(check_alive(game_table, table_size) == 12){
@@ -207,13 +207,13 @@ int main(){
             }
             right(game_table, table_size);
             update_available_positions(game_table, available_pos, table_size);
-            generate_new_vertex(game_table, available_pos, table_size);
+            generate_new_vertex(game_table, available_pos, table_size, bestscore);
         }
         else if(opt == "M"){
            print_menu();
            cin >> menu_opt;
            work_menu(menu_opt, game_table, name); 
-           print(game_table, table_size);
+           print(game_table, table_size, bestscore);
         }
         else if(opt == "E"){
             bool del = false, ins = true;
@@ -225,7 +225,7 @@ int main(){
             break;
         }
         else{
-            print(game_table, table_size);
+            print(game_table, table_size, bestscore);
         }
         if(!check_alive(game_table, table_size)){
             string file_name = name + ".txt";

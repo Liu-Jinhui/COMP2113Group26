@@ -34,7 +34,7 @@ void transfergrade(int n){
         cout << setw(3) << "  ";
 }
 
-void print(const vector<vector<int>>& v, const int size){
+void print(const vector<vector<int>>& v, const int size, double &bestscore){
     string line;
     if(size == 3){
         line = "-------------";
@@ -58,12 +58,12 @@ void print(const vector<vector<int>>& v, const int size){
     }
     cout << endl;
 
-//    double bestscore = 0.00;
     double currentscore=0.00;
     currentscore = calculation (v,size);
-//    if ( bestscore < currentscore ){
-//        bestscore = currentscore;
-//    }
-    cout << "Your Current GPA = " << currentscore << endl << endl;
-//    cout << "Your Best Score = " << bestscore << endl;
+    if ( bestscore < currentscore ){
+        bestscore = currentscore;
+    }
+    cout << "Your Current GPA = " << currentscore << endl;
+    cout << "Your Best GPA = " << bestscore << endl << endl;
+
 }

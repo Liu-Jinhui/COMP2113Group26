@@ -8,6 +8,6 @@ using namespace std;
 #define PRINT_H
 
 void transfergrade(int n);
-void print(const vector<vector<int>>& v, const int size);
+void print(const vector<vector<int>>& v, const int size, double &bestscore);
 
 #endif

@@ -13,7 +13,7 @@ struct position{
 
 const int initialized_values[3] = {0, 2, 4};
 
-void generate_new_vertex(vector<vector<int>>& v, list<position>& pos, const int size){
+void generate_new_vertex(vector<vector<int>>& v, list<position>& pos, const int size, double &bestscore){
     int num, available_num;
     available_num = pos.size();
     srand(time(NULL));
@@ -30,7 +30,7 @@ void generate_new_vertex(vector<vector<int>>& v, list<position>& pos, const int 
     srand(time(NULL));
     value = initialized_values[(rand()%3)];
     v[target -> x][target -> y] = value;
-    print(v, size);
+    print(v, size, bestscore);
 }
 
 void update_available_positions(vector<vector<int>>& v, list<position>& pos, const int size){
