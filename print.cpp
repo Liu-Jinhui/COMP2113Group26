@@ -1,11 +1,11 @@
 //print.cpp
 
 #include<iostream>
-using namespace std;
 #include<vector>
 #include<iomanip>
 #include "calculate.h"
 #include "print.h"
+using namespace std;
 
 void transfergrade(int n){
     if (n == 2)
@@ -35,7 +35,17 @@ void transfergrade(int n){
 }
 
 void print(const vector<vector<int>>& v, const int size){
-    cout << "-----------------"<<endl;
+    string line;
+    if(size == 3){
+        line = "-------------";
+    }
+    else if(size == 4){
+        line = "-----------------";
+    }
+    else if(size == 5){
+        line = "---------------------";
+    }
+    cout << line <<endl;
     for (int i = 0; i < size; i++){
         cout << "|";
         for (int j = 0; j < size; j++){
@@ -43,7 +53,7 @@ void print(const vector<vector<int>>& v, const int size){
             cout << "|";
         }
         cout << endl;
-        cout << "-----------------"<<endl;
+        cout << line <<endl;
 
     }
     cout << endl;
