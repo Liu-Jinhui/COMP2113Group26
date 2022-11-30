@@ -21,7 +21,6 @@ int best_score = 0;
 
 int table_size;
 
-
 void work_menu(string opt, vector<vector<int>>& v, string name){
     if(opt == "R"){
         print_regulation();
@@ -139,7 +138,6 @@ int main(){
             if(flag) break;
         }
     }
-
     list<position> available_pos;
     position *p = new position;
 
@@ -151,29 +149,29 @@ int main(){
         }
     }
 
-    generate_new_vertex(game_table, available_pos);
+    generate_new_vertex(game_table, available_pos, table_size);
     cout << "1|up  2|down  3|left  4|right  exit|end game M|show menu" << endl;
     string opt;
     while(cin >> opt){
         if(opt == "1"){
             up(game_table, table_size);
             update_available_positions(game_table, available_pos, table_size);
-            generate_new_vertex(game_table, available_pos);
+            generate_new_vertex(game_table, available_pos, table_size);
         }
         else if(opt == "2"){
             down(game_table, table_size);
             update_available_positions(game_table, available_pos, table_size);
-            generate_new_vertex(game_table, available_pos);
+            generate_new_vertex(game_table, available_pos, table_size);
         }
         else if(opt == "3"){
             left(game_table, table_size);
             update_available_positions(game_table, available_pos, table_size);
-            generate_new_vertex(game_table, available_pos);
+            generate_new_vertex(game_table, available_pos, table_size);
         }
         else if(opt == "4"){
             right(game_table, table_size);
             update_available_positions(game_table, available_pos, table_size);
-            generate_new_vertex(game_table, available_pos);
+            generate_new_vertex(game_table, available_pos, table_size);
         }
         else if(opt == "M"){
            print_menu();
