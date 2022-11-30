@@ -11,14 +11,14 @@ menu.o: menu.cpp menu.h
 move.o: move.cpp move.h
 	g++ $(FLAGS) -c $<
 
-print.o: print.cpp print.h calculate.h
-	g++ $(FLAGS) -c $<
+#print.o: print.cpp print.h calculate.h
+#	g++ $(FLAGS) -c $<
 
 status.o: status.cpp status.h
 	g++ $(FLAGS) -c $<
 
-main.o: main.cpp calculate.h menu.h move.h print.h status.h
-	g++ $(FLAGS) -c $<
+#main.o: main.cpp calculate.h menu.h move.h print.h status.h
+#	g++ $(FLAGS) -c $<
 
-main: main.o calculate.o menu.o move.o print.o status.o 
-	g++ $(FLAGS) $^ -o $@
+#main: main.o calculate.o menu.o move.o print.o status.o 
+#	g++ $(FLAGS) $^ -o $@

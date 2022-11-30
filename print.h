@@ -1,5 +1,8 @@
 //print.h
 
+#include<iostream>
+using namespace std;
+
 #ifndef PRINT_H
 #define PRINT_H
 

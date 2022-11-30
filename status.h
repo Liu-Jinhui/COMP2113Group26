@@ -1,5 +1,8 @@
 //status.h
 
+#include<vector>
+using namespace std;
+
 #ifndef STATUS_H
 #define STATUS_H
 
