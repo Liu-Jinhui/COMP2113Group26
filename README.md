@@ -27,12 +27,20 @@ A scoreboard on the upper-right keeps track of the user's current GPA and best G
 1. In ubuntu or terminal, input
 
 ```bash
+git clone https://github.com/Liu-Jinhui/COMP2113Group26.git
+```
+
+to download directory from github
+
+2. Then, input
+
+```bash
 make main
 ```
 
 to compile the codes.
 
-2. Then, input 
+3. Then, input 
 
 ```bash
 ./main
@@ -40,17 +48,17 @@ to compile the codes.
 
 to execute the program.
 
-3. Enjoy the game.
+4. Enjoy the game.
 
-4. In our game, if you don't want to play the game at this moment, press Exit to quit the game, and your grid will be stored. 
+5. In our game, if you don't want to play the game at this moment, press Exit to quit the game, and your grid will be stored. 
 
-5. To reload the game, input
+6. To reload the game, input
 
 ```bash
 ./main
 ```
 
-6. The "[user name].txt" formed after game execution is for the game data. Do not delete this file unless you want to reset the whole program.
+7. The "[user name].txt" formed after game execution is for the game data. Do not delete this file unless you want to reset the whole program.
 
 
 
