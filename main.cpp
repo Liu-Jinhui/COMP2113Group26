@@ -162,7 +162,7 @@ int main(){
     }
 
     generate_new_vertex(game_table, available_pos, table_size);
-    cout << "1|up  2|down  3|left  4|right  exit|end game M|show menu" << endl;
+    cout << "1|up  2|down  3|left  4|right  exit|end game  M|show menu" << endl;
     string opt;
     while(cin >> opt){
         if(opt == "1"){
@@ -209,7 +209,7 @@ int main(){
             cout << "Game Over" << endl;
             break;
         }
-        cout << "1|up  2|down  3|left  4|right  E|end game M|show menu" << endl;
+        cout << "1|up  2|down  3|left  4|right  E|end game  M|show menu" << endl;
     }
 
     return 0;
