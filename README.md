@@ -24,21 +24,27 @@ A scoreboard on the upper-right keeps track of the user’s CGPA (under the calc
 
 ## Compilation and execution instructions
 1. In ubuntu or terminal, input
+
 ```bash
-make mian
+make main
 ```
+
 to compile the codes.
 2. Then, input 
+
 ```bash
 ./main
 ```
+
 to execute the program.
 3. Enjoy the game.
 4. In our game, if you don't want to play the game at this moment, press Exit to quit the game, and your grid will be stored. 
 5. To reload the game, input
+
 ```bash
 ./main
 ```
+
 6. The "[user name].txt" formed after game execution is for the game data. Do not delete this file unless you want to reset the whole program.
 
 
