@@ -61,4 +61,14 @@ void print_history(string file_name){
     }
 }
 
+void save_best(string file_name, vector<vector<int>>& v, int size){
+    ofstream fout;
+    fout.open(file_name, ios::app);
+    time_t rawtime;
+    time (&rawtime);
+    fout << "Time: " <<  ctime (&rawtime);
+    fout << "Best score: " << calculation(v, size) << endl;
+    fout.close();
+}
+
 
