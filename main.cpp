@@ -22,30 +22,32 @@ int best_score = 0;
 int table_size;
 
 void work_menu(string opt, vector<vector<int>>& v, string name){
-    if(opt == "R"){
-        print_regulation();
-        return ;
-    }
-    else if(opt == "S"){
-        return ;
-    }
-    else if(opt == "E"){
-        bool del = false, ins = true;
-        if(name != ""){
-            string file_name = name + ".txt";
-            insert(file_name, v, table_size);
+    while (true){
+        if(opt == "R"){
+            print_regulation();
+            return ;
         }
-        bye();
-        exit(1);
-    }
-    else if(opt == "H"){
-        string file_name = name + ".txt";
-        print_history(file_name);
-        return ;
-    }
-    else{
-        cout << "Invalid option.\n";
-        return ;
+        else if(opt == "S"){
+            return ;
+        }
+        else if(opt == "E"){
+            bool del = false, ins = true;
+            if(name != ""){
+                string file_name = name + ".txt";
+                insert(file_name, v, table_size);
+            }
+            bye();
+            exit(1);
+        }
+        else if(opt == "H"){
+            string file_name = name + ".txt";
+            print_history(file_name);
+            return ;
+        }
+        else{
+            cout << "Invalid option. Please type in again:";
+            cin >> opt;
+        }
     }
 }
 
@@ -109,8 +111,18 @@ int main(){
                     print_cnt = 0;
                 }
             }
-            print(game_table, table_size);
             fin.close();
+            if(flag){
+                print(game_table, table_size);
+            }
+            else{
+                cout << "No previous game to continue. Please start a new game.\n";
+                cout << "Your prefered table size?[3|4|5]" << endl;
+                string s;
+                cin >> s;
+                table_size = new_user_init(name, s, game_table);
+                break;
+            }
             flag = false;
             while(true){
                 cout << "Do you want to continue?[Yes|No]" << endl;
@@ -132,7 +144,7 @@ int main(){
                     break;
                 }
                 else{
-                    cout << "Invalid option." << endl;
+                    cout << "Invalid option. Please try again" << endl;
                 }
             }
             if(flag) break;
@@ -192,6 +204,8 @@ int main(){
             print(game_table, table_size);
         }
         if(!check_alive(game_table, table_size)){
+            string file_name = name + ".txt";
+            save_best(file_name, game_table, table_size);
             cout << "Game Over" << endl;
             break;
         }
