@@ -10,7 +10,7 @@ struct position{
     int x, y;
 };
 
-void generate_new_vertex(vector<vector<int>>&, list<position>&);
-void update_available_positions(vector<vector<int>>&, list<position>&, const int);
+void generate_new_vertex(vector<vector<int>>& v, list<position>& pos, const int size);
+void update_available_positions(vector<vector<int>>& v, list<position>& pos, const int size);
 
 #endif 
