@@ -4,101 +4,62 @@
 #include<string>
 #include<fstream>
 #include<vector>
+#include<list>
 #include<cstdio>
+#include<time.h>
 #include "calculate.h"
 #include "menu.h"
 #include "move.h"
 #include "print.h"
 #include "status.h"
+#include "update.h"
+#include "data.h"
+#include "init.h"
 using namespace std;
-
-struct position{
-    int x,y;
-};
 
 int best_score = 0;
 
-const int initialized_values[3] = {0, 2, 4};
 int table_size;
 
-int new_user_init(string name, string s, vector<vector<int>>& v){
-    ifstream fin;
-    int size = int(s[0] - '0');
-    int x;
-    vector<int> v0;
-    if(s == "3"){
-        fin.open("3x3.txt");
-        for (int i = 0; i < size; i++){
-            while(!v0.empty()){
-                v0.pop_back();
-            }
-            for (int j = 0; j < size; j++){
-                fin >> x;
-                v0.push_back(x);
-            }
-            v.push_back(v0);
-        }
-    }
-    else if(s == "4"){
-        fin.open("4x4.txt");
-        for (int i = 0; i < size; i++){
-            while(!v0.empty()){
-                v0.pop_back();
-            }
-            for (int j = 0; j < size; j++){
-                fin >> x;
-                v0.push_back(x);
-            }
-            v.push_back(v0);
-        }
-    }
-    if(s == "5"){
-        fin.open("5x5.txt");
-        for (int i = 0; i < size; i++){
-            while(!v0.empty()){
-                v0.pop_back();
-            }
-            for (int j = 0; j < size; j++){
-                fin >> x;
-                v0.push_back(x);
-            }
-            v.push_back(v0);
-        }
-    }
-    return size;
-}
 
-void update(string file_name, bool deletion, bool insertion){
-    if (deletion){
-        ofstream fout ("temp.txt");
-        ifstream fin;
-        fin.open(file_name);
-        string str;
-        while(getline(fin, str)){
-            if('0' <= str[0] && str[0] <= '9'){
-                break;
-            }
-            fout << str << endl;
+void work_menu(string opt, vector<vector<int>>& v, string name){
+    if(opt == "R"){
+        print_regulation();
+        return ;
+    }
+    else if(opt == "S"){
+        return ;
+    }
+    else if(opt == "E"){
+        bool del = false, ins = true;
+        if(name != ""){
+            string file_name = name + ".txt";
+            insert(file_name, v, table_size);
         }
-        fin.close();
-        fout.close();
-
-        fin.open("temp.txt");
-        fout.open(file_name);
-        while(getline(fin, str)){
-            cout << str << endl;
-            fout << str;
-        }
-        fin.close();
-        fout.close();
-        remove("temp.txt");
+        bye();
+        exit(1);
+    }
+    else if(opt == "H"){
+        string file_name = name + ".txt";
+        print_history(file_name);
+        return ;
+    }
+    else{
+        cout << "Invalid option.\n";
+        return ;
     }
 }
 
 int main(){
     vector<vector<int>> game_table;
+    string status, name = "";
+    welcome();
 
-    string status, name;
+    print_menu();
+    string menu_opt;
+    cin >> menu_opt;
+    work_menu(menu_opt, game_table, name);
+
     while (true){
         cout << "Are you a new user?[Yes|No]" << endl;
         cin >> status;
@@ -124,48 +85,120 @@ int main(){
             while(getline(fin, str)){
                 if('0' <= str[0] && str[0] <= '9'){
                     vector<int> v0;
-                    if (!flag) cout << "This is your latest game history." << endl;
+                    if (!flag) cout << "\nThis is your latest game history.\n" << endl;
                     flag = true;
                     int len = str.length();
-                    int x, cnt = 0, print_cnt = 0;
+                    int x, cnt = -1, print_cnt = 0;
                     for(int i = 0; i < len; i++){
                         if(str[i] == ' '){
-                            cout << setw(5) << cnt;
                             v0.push_back(cnt);
                             print_cnt++;
-                            cnt = 0;
+                            cnt = -1;
                         }
                         else{
+                            if(cnt == -1) cnt = 0;
                             x = int(str[i] - '0');
                             cnt = cnt * 10 + x;
                         }
                     }
-                    if(print_cnt < len){
-                        cout << setw(5) << cnt;
+                    if(cnt != -1){
+                        print_cnt++;
+                        v0.push_back(cnt);
                     }
-                    print_cnt = 0;
                     game_table.push_back(v0);
-                    table_size = len;
-                    cout << endl;
+                    table_size = print_cnt;
+                    print_cnt = 0;
                 }
             }
+            print(game_table, table_size);
             fin.close();
-            cout << "Do you want to continue?[Yes|No]" << endl;
-            string option;
-            cin >> option;
-            if(option == "No"){
-                bool del = true;
-                bool ins = false;
-                update(file_name, del, ins);
-                break;
+            flag = false;
+            while(true){
+                cout << "Do you want to continue?[Yes|No]" << endl;
+                string option;
+                cin >> option;
+                if(option == "No"){
+                    del(file_name);
+                    renew(game_table);
+                    cout << "Let's start a new game. What is your prefered table size?[3|4|5]" << endl;
+                    string s;
+                    cin >> s;
+                    table_size = new_user_init(name, s, game_table);
+                    flag = true;
+                    break;
+                }
+                else if(option == "Yes"){
+                    del(file_name); 
+                    flag = true;
+                    break;
+                }
+                else{
+                    cout << "Invalid option." << endl;
+                }
             }
+            if(flag) break;
         }
     }
-    //print menu
-    //get user's options
-    //call move function
-    //calculate score
-    //print game table and score
-    //check status
+
+    list<position> available_pos;
+    position *p = new position;
+
+    for(int i = 0; i < table_size; i++){
+        for (int j = 0; j < table_size; j++){
+            p -> x = i;
+            p -> y = j;
+            available_pos.push_back((*p));
+        }
+    }
+
+    generate_new_vertex(game_table, available_pos);
+    cout << "1|up  2|down  3|left  4|right  exit|end game M|show menu" << endl;
+    string opt;
+    while(cin >> opt){
+        if(opt == "1"){
+            up(game_table, table_size);
+            update_available_positions(game_table, available_pos, table_size);
+            generate_new_vertex(game_table, available_pos);
+        }
+        else if(opt == "2"){
+            down(game_table, table_size);
+            update_available_positions(game_table, available_pos, table_size);
+            generate_new_vertex(game_table, available_pos);
+        }
+        else if(opt == "3"){
+            left(game_table, table_size);
+            update_available_positions(game_table, available_pos, table_size);
+            generate_new_vertex(game_table, available_pos);
+        }
+        else if(opt == "4"){
+            right(game_table, table_size);
+            update_available_positions(game_table, available_pos, table_size);
+            generate_new_vertex(game_table, available_pos);
+        }
+        else if(opt == "M"){
+           print_menu();
+           cin >> menu_opt;
+           work_menu(menu_opt, game_table, name); 
+           print(game_table, table_size);
+        }
+        else if(opt == "E"){
+            bool del = false, ins = true;
+            if(name != ""){
+                string file_name = name + ".txt";
+                insert(file_name, game_table, table_size);
+            }
+            bye();
+            break;
+        }
+        else{
+            print(game_table, table_size);
+        }
+        if(!check_alive(game_table, table_size)){
+            cout << "Game Over" << endl;
+            break;
+        }
+        cout << "1|up  2|down  3|left  4|right  E|end game M|show menu" << endl;
+    }
+
     return 0;
 }

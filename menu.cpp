@@ -35,6 +35,7 @@ void print_menu() {
 	cout << "                                                          ---------------------                      " << endl;
 	cout << "-----------------------------------------------------------------------------------------------------------------------------------------------------" << endl;
 	cout << endl;
+	cout << "(You cannot check the history before you start the game)" << endl;
 	cout << "▽ Your choice" << endl;
 }
 
@@ -45,7 +46,7 @@ void print_regulation() {
 	cout << "				This is a single-player sliding tile puzzle video game." << endl;
 	cout << endl;
 	cout << "				Every turn, a new tile may randomly appear in an empty spot on the board which is either D or D+." << endl;
-	cout << "				The user can select the direction of the sliding of tiles. "
+	cout << "				The user can select the direction of the sliding of tiles. ";
 	cout << "				Tiles slide as far as possible in the chosen direction until they are stopped by either another tile or the edge of the grid. " << endl;
 	cout << "				If you enter 1, all tiles will move up; If you enter 2, all tiles will move down; If you enter 3, all tiles will move left; If you enter 4, all tiles will move right." << endl;
 	cout << "				if you enter “exit”, the game will end." << endl;

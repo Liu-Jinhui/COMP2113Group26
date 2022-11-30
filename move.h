@@ -1,4 +1,6 @@
 //move.h
+#include<vector>
+using namespace std;
 
 #ifndef MOVE_H
 #define MOVE_H
