@@ -31,3 +31,6 @@ main.o: main.cpp calculate.h menu.h move.h print.h status.h
 
 main: main.o calculate.o menu.o move.o print.o status.o update.o data.o init.o
 	g++ $(FLAGS) $^ -o $@
+
+clean: 
+	rm -f main.o calculate.o menu.o move.o print.o status.o update.o data.o init.o main 
