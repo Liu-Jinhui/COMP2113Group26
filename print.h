@@ -1,6 +1,7 @@
 //print.h
 
 #include<iostream>
+#include<vector>
 using namespace std;
 
 #ifndef PRINT_H
