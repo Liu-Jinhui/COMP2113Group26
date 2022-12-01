@@ -2,7 +2,7 @@
 
 A group project for COMP2113 by Xie Qingzhu and Liu Jinhui
 
-## Description of your game and introduction of the game rules
+## Description of the game and introduction of the game rules
 
 This is a single player sliding tile puzzle video game.User can play on a plain 3×3 / 4×4 / 5×5 grid, with numbered tiles that slide when a player moves them using the four arrow keys. First, the user can choose the difficulty of the game, which means that they can choose whether they play the game based on a 3×3, 4×4 or 5×5 grid. Every turn, a new tile may randomly appear in an empty spot on the board which is either D or D+.
 
