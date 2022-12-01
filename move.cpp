@@ -5,6 +5,7 @@
 #include "move.h"
 using namespace std;
 
+//move up
 void up(vector<vector<int>>& v, const int size){
     vector<int> current_col, new_col;
     int col_size;
@@ -51,6 +52,7 @@ void up(vector<vector<int>>& v, const int size){
     }
 }
 
+//move down
 void down(vector<vector<int>>& v, const int size){
     vector<int> current_col, new_col;
     int col_size;
@@ -97,6 +99,7 @@ void down(vector<vector<int>>& v, const int size){
     }
 }
 
+//move left
 void left(vector<vector<int>>& v, const int size){
     vector<int> current_row, new_row;
     int row_size;
@@ -143,6 +146,7 @@ void left(vector<vector<int>>& v, const int size){
     }
 }
 
+//move right 
 void right(vector<vector<int>>& v, const int size){
     vector<int> current_row, new_row;
     int row_size;

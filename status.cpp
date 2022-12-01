@@ -5,6 +5,7 @@
 #include "status.h"
 using namespace std;
 
+//scan through the table to check the availability of continue playing
 int check_alive(const vector<vector<int>>&v, const int size){
     int flag = 0;
     int cnt = 0;

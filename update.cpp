@@ -13,6 +13,7 @@ struct position{
 
 const int initialized_values[3] = {0, 2, 4};
 
+//give a value to the available tiles
 void generate_new_vertex(vector<vector<int>>& v, list<position>& pos, const int size, double &bestscore){
     int num, available_num;
     available_num = pos.size();
@@ -33,6 +34,7 @@ void generate_new_vertex(vector<vector<int>>& v, list<position>& pos, const int 
     print(v, size, bestscore);
 }
 
+//update the position of tiles that are free to add values
 void update_available_positions(vector<vector<int>>& v, list<position>& pos, const int size){
     while(!pos.empty()){
         pos.pop_front();

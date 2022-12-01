@@ -5,6 +5,7 @@
 #include "calculate.h"
 using namespace std;
 
+//delete the latest unfinished game table
 void del(string file_name){
     ofstream fout ("temp.txt");
     ifstream fin;
@@ -29,6 +30,7 @@ void del(string file_name){
     remove("temp.txt");
 }
 
+//insert a new unfinished game record, including the time, score and the game table
 void insert(string file_name, vector<vector<int>>& v, int size){
     ofstream fout;
     fout.open(file_name, ios::app);
@@ -45,6 +47,7 @@ void insert(string file_name, vector<vector<int>>& v, int size){
     fout.close();
 }
 
+//print the game history of a specific user
 void print_history(string file_name){
     ifstream fin;
     fin.open(file_name);
@@ -62,6 +65,7 @@ void print_history(string file_name){
     cout << endl;
 }
 
+//save the best score and time when a game is over
 void save_best(string file_name, vector<vector<int>>& v, int size){
     ofstream fout;
     fout.open(file_name, ios::app);

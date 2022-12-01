@@ -4,12 +4,14 @@
 #include<fstream>
 using namespace std;
 
+//Renew the game table by removing all the staffs in the table
 void renew(vector<vector<int>>& v){
     while(!v.empty()){
         v.pop_back();
     }
 }
 
+//Initialize the game table based on the user's preference
 int new_user_init(string name, string s, vector<vector<int>>& v){
     ifstream fin;
     int size = int(s[0] - '0');

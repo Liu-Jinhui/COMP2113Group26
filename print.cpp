@@ -7,6 +7,7 @@
 #include "print.h"
 using namespace std;
 
+//transfer the integers stored in the table to related grades
 void transfergrade(int n){
     if (n == 2)
         cout << setw(3) << "D ";
@@ -34,6 +35,7 @@ void transfergrade(int n){
         cout << setw(3) << "  ";
 }
 
+//print current game table, current score and best score
 void print(const vector<vector<int>>& v, const int size, double &bestscore){
     string line;
     if(size == 3){
