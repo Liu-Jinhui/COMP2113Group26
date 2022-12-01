@@ -54,6 +54,7 @@ All the functions are stored in related .cpp files rather than main.cpp. Also, c
 
 ```c++
 #include<ctime>
+using namespace std;
 
 time_t rawtime;
 time (&rawtime);//get the calender time
