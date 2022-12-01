@@ -12,7 +12,7 @@ A scoreboard at the bottom keeps track of the user's current GPA and best GPA (u
 
 ## Features to implement
 
-1. User specific data saving (File input and output): load user's game data at the beginning of the game and save the data into user_name.txt once the user wants to exit the game.
+1. User specific data saving (File input and output): load user's game data at the beginning of the game and save the data into "[user_name].txt" once the user wants to exit the game.
 2. Load game history (File input): use ```ifstream``` of the fstream library to load users previous game history, including playing time and the best scores in those plays.
 3. Store a constantly changing game table (Data structures): in this game, we use a 2D vector of type int to store the constantly changing game table.
 4. Random generation of new tiles (Generation of random game events): use ```srand(time(NULL))``` in library cstlib and ```rand()``` to collaborately generate new tile at one randomly choosed position in the game table once the user wants to move the tile.
