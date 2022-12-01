@@ -80,7 +80,7 @@ int main(){
             string file_name = name + ".txt";
             fin.open(file_name);
             if(fin.fail()){
-                cout << "No record found. Please try again.";
+                cout << "No record found. Please try again. ";
                 continue;
             }
             string str;

@@ -104,10 +104,3 @@ to execute the program.
 ```
 
 8. The "[user name].txt" formed after game execution is for the game data. Do not delete this file unless you want to reset the whole program.
-
-----
-For Markdown syntax, please refer to:
-
-[GitHub Guidelines](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax)
-
-[Markdown Guide](https://www.markdownguide.org/)
