@@ -69,6 +69,7 @@ git clone https://github.com/Liu-Jinhui/COMP2113Group26.git
 ```
 
 to download directory from github.
+
 2. Input
 
 ```bash
@@ -76,6 +77,7 @@ cd COMP2113Group26
 ```
 
 to attend the game directory.
+
 3. Input
 
 ```bash
@@ -83,6 +85,7 @@ make main
 ```
 
 to compile the codes.
+
 4. Input
 
 ```bash
@@ -90,6 +93,7 @@ to compile the codes.
 ```
 
 to execute the program.
+
 5. Enjoy the game.
 6. In our game, if you don't want to play the game at this moment, press ```E``` to exit the game, and your grid will be stored.
 7. To reload the game, input
