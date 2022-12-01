@@ -27,19 +27,19 @@ Using  ```srand(time(NULL))``` in cstlib and ```rand()``` to collaborately gener
 
 ### **Data structures**
 
-1. Using a 2D vector of type int to store the constantly changing game table.
+1. Using a 2D vector in the vector STL library of type int to store the constantly changing game table.
 
 2. Using a 1D vector of int type in the movement functions to merge adjacent positions of the same value in a row/column and store the 1D vector back to the 2D game table.
 
-3. Using a list to store all the available positions in the game table.
+3. Using a list in the list STL library to store all the available positions in the game table.
 
 ### **Dynamic memory**
 
-Using dynamic variables of type position (a user defined structure) to mark the coordinate of available positions in the current game table.
+Using dynamic variables ```new position``` of type position (a user defined structure) to mark the coordinate of available positions in the current game table.
 
 ### **File input/output**
 
-1. User specific data saving: load user's game data at the beginning of the game and save the data into user_name.txt once the user wants to exit the game.
+1. User specific data saving: load user's game data at the beginning of the game using ```ifstream``` in the fstream library and save the data into user_name.txt using ```ofstream``` in the fstream library once the user wants to exit the game.
 
 2. Load game history: use ```ifstream``` of the fstream library to load users previous game history, including playing time and the best scores in those plays.
 
