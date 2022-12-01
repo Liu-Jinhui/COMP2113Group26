@@ -36,24 +36,36 @@ double transfer(int n){
 
 //calculate the score of current game table
 double calculation(const vector<vector<int>>& v, const int size){
+    
     double score = 0;
+    //score records total grade points assuming that each course has one credit
+    
     int cntava = 0;
+    //cntava records the number of course taken (number of grids that has grade)
+    
     int intpart = 0;
+    //intpart is used to round score to two decimal places
+    
     for(int i = 0; i < size; i++){
         for(int j = 0; j < size; j++){
             score += transfer(v[i][j]);
         }
     }
+    //calculate score
+    
     for(int i = 0; i < size; i++){
         for(int j = 0; j < size; j++){
             if (v[i][j] != 0)
             cntava += 1;
         }
     }
+    //calculate cntava
+    
     if (cntava == 0)
         return 0;
     else{
         score = score / cntava;
+        //round score to two decimal places
         intpart = (score + 0.005) / 0.01;
         score = intpart * 0.01 ;
         return score;}
