@@ -38,6 +38,7 @@ void transfergrade(int n){
 //print current game table, current score and best score
 void print(const vector<vector<int>>& v, const int size, double &bestscore){
     string line;
+    //line is the horizontal frame of the table
     if(size == 3){
         line = "-------------";
     }
@@ -59,9 +60,12 @@ void print(const vector<vector<int>>& v, const int size, double &bestscore){
 
     }
     cout << endl;
-
+    
+    //currentscore is the calculated GPA of the table
     double currentscore=0.00;
     currentscore = calculation (v,size);
+    
+    //use if statement to update the best GPA in this round if applicable
     if ( bestscore < currentscore ){
         bestscore = currentscore;
     }
