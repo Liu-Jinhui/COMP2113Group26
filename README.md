@@ -39,7 +39,7 @@ Using dynamic variables of type position (a user defined structure) to mark the 
 
 ### **File input/output**
 
-1. User specific data saving: Load user's game data at the beginning of the game and save the data into user_name.txt once the user wants to exit the game.
+1. User specific data saving: load user's game data at the beginning of the game and save the data into user_name.txt once the user wants to exit the game.
 
 2. Load game history: use ```ifstream``` of the fstream library to load users previous game history, including playing time and the best scores in those plays.
 
