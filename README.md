@@ -12,12 +12,12 @@ A scoreboard at the bottom keeps track of the user's current GPA and best GPA (u
 
 ## Features to implement
 
-1. User specific data saving (File input and output): load user's game data at the beginning of the game and save the data into "[user_name].txt" once the user wants to exit the game.
-2. Load game history (File input): use ```ifstream``` of the fstream library to load users previous game history, including playing time and the best scores in those plays.
-3. Store a constantly changing game table (Data structures): in this game, we use a 2D vector of type int to store the constantly changing game table.
+1. User specific data saving (File input and output): load user's game data at the beginning of the game using ```ifstream``` in the fstream library and save the data into "[user_name].txt" using ```ofstream``` in the fstream library once the user wants to exit the game.
+2. Load game history (File input): use ```ifstream``` in the fstream library to load users previous game history, including playing time and the best scores in those plays.
+3. Store a constantly changing game table (Data structures): in this game, we use a 2D vector in the ```vector``` library of type int to store the constantly changing game table.
 4. Random generation of new tiles (Generation of random game events): use ```srand(time(NULL))``` in library cstlib and ```rand()``` to collaborately generate new tile at one randomly choosed position in the game table once the user wants to move the tile.
 5. Slide the tiles in different directions (Data structures): in the movement functions, we use a 1D vector of int type to merge adjacent positions of the same value in a row/column and store the 1D vector back to the 2D game table.
-6. Real time checking of game status (Dynamic memory management; Data structures for storing game status): we use dynamic variable to mark the coordinate of available positions, and store the dynamic variable into a list containg all the available positions.
+6. Real time checking of game status (Dynamic memory management; Data structures for storing game status): we use dynamic variable to mark the coordinate of available positions, and store the dynamic variable into a list(in the ```list``` STL library)  containg all the available positions.
 
 ## Match code requirement
 
