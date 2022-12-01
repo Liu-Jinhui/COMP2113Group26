@@ -35,7 +35,7 @@ void work_menu(string opt, vector<vector<int>>& v, string name){
             bool del = false, ins = true;
             if(name != ""){
                 string file_name = name + ".txt";
-                insert(file_name, v, table_size);
+                insert(file_name, v, table_size, bestscore);
             }
             bye();
             exit(1);
@@ -223,7 +223,7 @@ int main(){
             bool del = false, ins = true;
             if(name != ""){
                 string file_name = name + ".txt";
-                insert(file_name, game_table, table_size);
+                insert(file_name, game_table, table_size, bestscore);
             }
             bye();
             break;

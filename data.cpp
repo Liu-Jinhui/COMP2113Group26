@@ -31,13 +31,13 @@ void del(string file_name){
 }
 
 //insert a new unfinished game record, including the time, score and the game table
-void insert(string file_name, vector<vector<int>>& v, int size){
+void insert(string file_name, vector<vector<int>>& v, int size, double &bestscore){
     ofstream fout;
     fout.open(file_name, ios::app);
     time_t rawtime;
     time (&rawtime);
     fout << "Time: " <<  ctime (&rawtime);
-    fout << "Best GPA: " << calculation(v, size) << endl;
+    fout << "Best GPA: " << bestscore << endl;
     for(int i = 0; i < size; i++){
         for(int j = 0; j < size; j++){
             fout << v[i][j] << " ";
