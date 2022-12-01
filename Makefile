@@ -34,3 +34,5 @@ main: main.o calculate.o menu.o move.o print.o status.o update.o data.o init.o
 
 clean: 
 	rm -f main.o calculate.o menu.o move.o print.o status.o update.o data.o init.o main 
+
+.PHONY: clean
