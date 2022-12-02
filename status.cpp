@@ -6,6 +6,8 @@
 using namespace std;
 
 //scan through the table to check the availability of continue playing
+//input: (vector) game table, (int) table size
+//output: (int) game status (1: having more than one free space; 12: no free space, only allow to move up or down; 34: no free space, only allow to move left or right; 0: dead)
 int check_alive(const vector<vector<int>>&v, const int size){
     int flag = 0;
     int cnt = 0;
