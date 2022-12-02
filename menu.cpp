@@ -5,12 +5,18 @@
 #include "menu.h"
 using namespace std;
 
+//welcome message
+//no input
+//no output
 void welcome() {
 	cout << "-----------------------------------------------------------------------------------------------------------------------------------------------------" << endl;
 	cout << "                                                  (๐•ᴗ•๐) Welcome to this game (๐•ᴗ•๐)" << endl;
 	cout << "-----------------------------------------------------------------------------------------------------------------------------------------------------" << endl;
 }
 
+//menu
+//no input
+//no output
 void print_menu() {
 	system("clear");
 	cout << endl;
@@ -39,6 +45,9 @@ void print_menu() {
 	cout << "▽ Your choice" << endl;
 }
 
+//regulation
+//no input
+//no output
 void print_regulation() {
 	system("clear");
 	cout << "						                                 Introduction of our game" << endl;
@@ -62,6 +71,9 @@ void print_regulation() {
 	
 }
 
+//bye
+//no input 
+//no output
 void bye() {
 	system("clear");
 	cout << "-----------------------------------------------------------------------------------------------------------------------------------------------------" << endl;
