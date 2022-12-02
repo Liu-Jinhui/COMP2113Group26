@@ -8,6 +8,8 @@
 using namespace std;
 
 //transfer the integers stored in the table to related grades
+//input: (int) value n
+//no output
 void transfergrade(int n){
     if (n == 2)
         cout << setw(3) << "D ";
@@ -36,6 +38,7 @@ void transfergrade(int n){
 }
 
 //print current game table, current score and best score
+//input: (vector) game table, (int) table size, (double) best score
 void print(const vector<vector<int>>& v, const int size, double &bestscore){
     string line;
     //line is the horizontal frame of the table
