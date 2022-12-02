@@ -5,6 +5,8 @@
 using namespace std;
 
 //Renew the game table by removing all the staffs in the table
+//input: (vector) game table
+//no output
 void renew(vector<vector<int>>& v){
     while(!v.empty()){
         v.pop_back();
@@ -12,6 +14,8 @@ void renew(vector<vector<int>>& v){
 }
 
 //Initialize the game table based on the user's preference
+//input: (string) user name, (string) user's choice of game table, (vector) game table
+//output: (int) size of game table
 int new_user_init(string name, string s, vector<vector<int>>& v){
     ifstream fin;
     int size = int(s[0] - '0');
