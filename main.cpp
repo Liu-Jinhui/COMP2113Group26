@@ -22,6 +22,8 @@ int table_size;
 double bestscore = 0.00;
 
 //Show different things based on user's choice to the options shown on the menu
+//input: (string) user's choice of menu, (vector) game table, (string) user name
+//no output
 void work_menu(string opt, vector<vector<int>>& v, string name){
     while (true){
         if(opt == "R"){
