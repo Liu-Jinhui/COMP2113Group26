@@ -73,6 +73,7 @@ void print_history(string file_name){
 
 //save the best score and time when a game is over
 //input: (string) file name, (vector) game table, (int) table size
+//no output
 void save_best(string file_name, vector<vector<int>>& v, int size){
     ofstream fout;
     fout.open(file_name, ios::app);
