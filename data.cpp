@@ -6,6 +6,8 @@
 using namespace std;
 
 //delete the latest unfinished game table
+//input: (string) file name
+//no output
 void del(string file_name){
     ofstream fout ("temp.txt");
     ifstream fin;
@@ -31,6 +33,8 @@ void del(string file_name){
 }
 
 //insert a new unfinished game record, including the time, score and the game table
+//input: (string) file name, (vector) game table, (double) best GPA in this game
+//no output
 void insert(string file_name, vector<vector<int>>& v, int size, double &bestscore){
     ofstream fout;
     fout.open(file_name, ios::app);
@@ -48,6 +52,8 @@ void insert(string file_name, vector<vector<int>>& v, int size, double &bestscor
 }
 
 //print the game history of a specific user
+//input: (string) file name
+//no output
 void print_history(string file_name){
     ifstream fin;
     fin.open(file_name);
@@ -66,6 +72,7 @@ void print_history(string file_name){
 }
 
 //save the best score and time when a game is over
+//input: (string) file name, (vector) game table, (int) table size
 void save_best(string file_name, vector<vector<int>>& v, int size){
     ofstream fout;
     fout.open(file_name, ios::app);
