@@ -6,6 +6,8 @@
 using namespace std;
 
 //move up
+//input: (vector) game table, (int) table size
+//no output
 void up(vector<vector<int>>& v, const int size){
     vector<int> current_col, new_col;
     int col_size;
@@ -53,6 +55,8 @@ void up(vector<vector<int>>& v, const int size){
 }
 
 //move down
+//input: (vector) game table, (int) table size
+//no output
 void down(vector<vector<int>>& v, const int size){
     vector<int> current_col, new_col;
     int col_size;
@@ -100,6 +104,8 @@ void down(vector<vector<int>>& v, const int size){
 }
 
 //move left
+//input: (vector) game table, (int) table size
+//no output
 void left(vector<vector<int>>& v, const int size){
     vector<int> current_row, new_row;
     int row_size;
@@ -147,6 +153,8 @@ void left(vector<vector<int>>& v, const int size){
 }
 
 //move right 
+//input: (vector) game table, (int) table size
+//no output
 void right(vector<vector<int>>& v, const int size){
     vector<int> current_row, new_row;
     int row_size;
