@@ -7,6 +7,8 @@
 using namespace std;
 
 //transfer the original number to GPA
+//input: (int) the value stored in the game table
+//output: (double) corresponding GPA value
 double transfer(int n){
     if (n == 2)
         return 1;
@@ -35,6 +37,8 @@ double transfer(int n){
 }
 
 //calculate the score of current game table
+//input: (vector)game table, (int) table size 
+//output: (double) current GPA score
 double calculation(const vector<vector<int>>& v, const int size){
     
     double score = 0;
