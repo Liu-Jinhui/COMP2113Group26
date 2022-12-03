@@ -168,7 +168,7 @@ int main(){
 
     //play the game: move the slides in different directions
     generate_new_vertex(game_table, available_pos, table_size, bestscore);
-    cout << "1|up  2|down  3|left  4|right  exit|end game  M|show menu" << endl;
+    cout << "1|up  2|down  3|left  4|right  E|end game  M|show menu" << endl;
     string opt;
     while(cin >> opt){
         if(opt == "1"){//move up
