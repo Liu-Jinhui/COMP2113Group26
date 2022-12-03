@@ -69,6 +69,7 @@ void print_history(string file_name){
         cout << str << endl;
     }
     cout << endl;
+    fin.close();
 }
 
 //save the best score and time when a game is over
