@@ -60,5 +60,6 @@ int new_user_init(string name, string s, vector<vector<int>>& v){
             v.push_back(v0);
         }
     }
+    fin.close();
     return size;
 }
