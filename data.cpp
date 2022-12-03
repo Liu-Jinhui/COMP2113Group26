@@ -11,7 +11,7 @@ using namespace std;
 void del(string file_name){
     ofstream fout ("temp.txt");
     ifstream fin;
-    fin.open(file_name);
+    fin.open(file_name.c_str());
     string str;
     while(getline(fin, str)){
         if('0' <= str[0] && str[0] <= '9'){
@@ -23,7 +23,7 @@ void del(string file_name){
     fout.close();
 
     fin.open("temp.txt");
-    fout.open(file_name);
+    fout.open(file_name.c_str());
     while(getline(fin, str)){
         fout << str << endl;
     }
@@ -37,7 +37,7 @@ void del(string file_name){
 //no output
 void insert(string file_name, vector<vector<int>>& v, int size, double &bestscore){
     ofstream fout;
-    fout.open(file_name, ios::app);
+    fout.open(file_name.c_str(), ios::app);
     time_t rawtime;
     time (&rawtime);
     fout << "Time: " <<  ctime (&rawtime);
@@ -56,7 +56,7 @@ void insert(string file_name, vector<vector<int>>& v, int size, double &bestscor
 //no output
 void print_history(string file_name){
     ifstream fin;
-    fin.open(file_name);
+    fin.open(file_name.c_str());
     if(fin.fail()){
         cout << "Invalid user name.\n";
         return ;
@@ -77,7 +77,7 @@ void print_history(string file_name){
 //no output
 void save_best(string file_name, vector<vector<int>>& v, int size){
     ofstream fout;
-    fout.open(file_name, ios::app);
+    fout.open(file_name.c_str(), ios::app);
     time_t rawtime;
     time (&rawtime);
     fout << "Time: " <<  ctime (&rawtime);

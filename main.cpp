@@ -80,7 +80,7 @@ int main(){
             //load user's previous game history
             ifstream fin;
             string file_name = name + ".txt";
-            fin.open(file_name);
+            fin.open(file_name.c_str());
             if(fin.fail()){
                 cout << "No record found. Please try again. ";
                 continue;
