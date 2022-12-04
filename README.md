@@ -1,6 +1,6 @@
-# COMP2113Group26
+# Survive at HKU 
 
-A group project for COMP2113 by Xie Qingzhu and Liu Jinhui
+A group project for COMP2113 by Xie Qingzhu and Liu Jinhui (Group26)
 
 ## Description of the game and introduction of the game rules
 
